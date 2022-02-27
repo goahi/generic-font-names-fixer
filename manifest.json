@@ -1,0 +1,15 @@
+{
+"manifest_version": 2,
+"name": "Default-fontfamily",
+"version": "1.0",
+
+"description": "Fix default fontfamilies",
+
+"content_scripts": [
+  {
+    "matches": ["*://*/*"],
+    "js": ["defont.js"]
+  }
+]
+
+}
