@@ -1,9 +1,9 @@
 {
 "manifest_version": 2,
-"name": "Default-fontfamily",
-"version": "1.1",
+"name": "Generic Font Names Fixer",
+"version": "1.2",
 
-"description": "Fix default fontfamilies",
+"description": "Fix the incorrect generic font-family name",
 
 "content_scripts": [
   {
