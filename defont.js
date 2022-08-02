@@ -14,7 +14,9 @@ for (let i = 0; i < sheets.length; i++) {
             const font_family = style.style.fontFamily;
             if (font_family) {
                 const replaced = font_family.replace(/"(sans-serif|serif|sans|monospace)"/gi, "$1");
-                style.style.fontFamily = replaced;
+                if (replaced !== font_family) {
+                    style.style.fontFamily = replaced;
+                }
             }
         }
     } catch (e) {}
@@ -24,5 +26,8 @@ const inlineSheets = document.querySelectorAll("style");
 //replace styles in <style> tags
 inlineSheets.forEach((sheet) => {
     const css = sheet.textContent;
-    sheet.textContent = css.replace(/"(sans-serif|serif|sans|monospace)"/gi, "$1");
+    const replaced = css.replace(/"(sans-serif|serif|sans|monospace)"/gi, "$1");
+    if (css !== replaced) {
+        sheet.textContent = replaced;
+    }
 });
